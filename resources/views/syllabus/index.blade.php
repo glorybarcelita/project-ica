@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<a href="{{ route('subjects.index') }}" class="btn btn-md btn-outline-secondary">Go Back</a>
     <div class="container mt-4">
         <legend>Syllabus</legend>
         <muted> Syllabus or subject outline is a list of topic covered in a subject. </muted>   

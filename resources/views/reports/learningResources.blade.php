@@ -15,7 +15,7 @@
                 <thead>
                     <th>Action</th>
                     <th>Course Name</th>
-                    <th>Description</th>
+                    <th>Lecturer</th>
                     
                 </thead>
                 <tbody>
@@ -24,9 +24,11 @@
                         <td><a href="{{url('reports/learningresources').'/'.$subject->id}}" class="btn btn-outline-info">View Syllabus</a></td>
                         <td>{{$subject->name}}</td>
                         <td>
-                            @foreach($lecturers as $lecturer)
-                                {{ $subject->user_id == $lecturer->id ? $lecturer->firstname. ' ' . $lecturer->lastname : '' }}
-                            @endforeach
+                            @if($subject->user_id )
+                            {{App\User::find($subject->user_id )->firstname}} {{App\User::find($subject->user_id )->lastname}}
+                            @else
+                            No assigned lecturer
+                            @endif
                         </td>
                     </tr>
                    @endforeach

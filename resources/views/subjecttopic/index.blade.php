@@ -13,6 +13,8 @@
         <a href="{{ url('exams/'.$subject_id) }}" class="btn btn-md btn-info mt-3 pull-right">View Exam</a>
       @elseif(Auth::user()->role_id == 4)
         <a href="{{ url('exams/'.$subject_id) }}" class="btn btn-md btn-info mt-3 pull-right btnExam">Take Exam</a>
+      @elseif(Auth::user()->role_id == 1)
+        <a href="{{ url('exams/'.$subject_id) }}" class="btn btn-md btn-info mt-3 pull-right">View Exam</a>
       @endif
     </div>
     <div class="card card-info  my-3 ml-3">
@@ -24,8 +26,7 @@
                   <a href="{{ url('quiz/'.$subject->id.'/'.$topic->id) }}" class="btn btn-sm btn-secondary mt-2 pull-right btn{{$topic->id}}">Take quiz</a>
                   <div class="div{{$topic->id}}"></div>
               </h4>
-            @elseif(Auth::user()->role_id==3)
-
+            @elseif(Auth::user()->role_id==3 || Auth::user()->role_id==1 )
               <h4 class="text-dark col-lg-12 mx-3 mt-2">{{ $topic->name }} <br> <a href="{{ url('quiz/'.$subject->id.'/'.$topic->id) }}" class="btn btn-sm btn-secondary mt-2 pull-right">View quiz</a></h4>
             @endif
             
@@ -39,7 +40,6 @@
                     </div>
                     
                     <div class="card-body">
-                        
                         <h6 class="text-info">Note</h6>
                         <p class="card-text">{{$subject_topic->note}}</p>
                     </div>

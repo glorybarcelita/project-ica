@@ -14,7 +14,9 @@
               <table class="table table-bordered mt-4" id="myTable">
                   <thead>
                     <tr>
+                      @if(Auth::user()->role_id == 3 && Auth::user()->role_id == 4 )
                       <th width="100px">Action</th>
+                      @endif
                       <th>Question</th>
                       <th>Choice 1</th>
                       <th>Choice 2</th>
@@ -27,6 +29,7 @@
                   <tbody>
                     @foreach($questions as $question)
                     <tr>
+                      @if(Auth::user()->role_id == 3 && Auth::user()->role_id == 4 )
                       <td>
                         @if(Auth::user()->role_id == 4)
                           <button type="button" id="{{$question->id}}" class="btn btn-sm btn-outline-success btnAns">Answer</a>
@@ -35,6 +38,7 @@
                           <button type="button" id="{{$question->id}}" class="btn btn-sm btn-outline-danger btnDelete">Delete</a>
                         @endif
                       </td>
+                      @endif
                       <td>{{$question->question}}</td>
                       @foreach($choices as $choice)
                         @if($choice->quiz_id == $question->id)

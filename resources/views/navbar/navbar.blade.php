@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-info" >
-    <a class="navbar-brand" href="{{ url('/home') }}"><img src="{{ asset('img/icalogo.png') }}"  width="auto" height="35px"></a>
+    <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('img/icalogo.png') }}"  width="auto" height="35px"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -7,7 +7,7 @@
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             @if(Auth::guest())
             <li class="nav-item active">
-                <a class="nav-link" href="{{ url('home') }}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('register') }}">Register <span class="sr-only">(current)</span></a>
             </li>
             @elseif(Auth::user()->role_id == '4')   
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -111,7 +111,7 @@
             {{-- LOGIN NAV-LINK --}}
 
            
-            @if (Route::has('login'))
+{{--             @if (Route::has('login'))
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     @auth
                         <li class="nav-item">
@@ -129,7 +129,8 @@
                        
                     @endauth
                 </ul>
-            @endif
+            @endif --}}
+
 
 
             @auth
