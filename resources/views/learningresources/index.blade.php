@@ -6,9 +6,9 @@
     <div class="card card-info mt-3">
         <div class="card-header">
             Subject Collection
-            @if(Auth::user()->role_id == 2)
+{{--             @if(Auth::user()->role_id == 2)
               <a href="" class="btn btn-sm btn-info float-right">Edit Approval</a>
-            @endif
+            @endif --}}
         </div>
         <div class="row">
           @if(Auth::user()->role_id == 4)

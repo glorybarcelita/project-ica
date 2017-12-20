@@ -10,6 +10,9 @@ use App\Models\SubjectTopic;
 use App\Models\Topic;
 use App\User;
 use App\Quiz;
+use App\Exam;
+use App\QuizRecord;
+use App\ExamRecord;
 
 class ReportsController extends Controller
 {
@@ -17,8 +20,6 @@ class ReportsController extends Controller
     public function userReport()
     {
         return view('reports.userReport');
-                
-        
     }
 
     public function subjectReport()
@@ -66,9 +67,40 @@ class ReportsController extends Controller
             ]);
     }
 
-     public function quizStatsReport()
+     public function quizStatsReport($quiz_id)
     {
-        return view('reports.quizStats');
+        return view('reports.quizStats')
+            ->with([
+                'quiz_stats'=>QuizRecord::where('quiz_id', $quiz_id)->get()
+            ]);
+    }
+
+    public function achieverWall()
+    {
+        return view('reports.achiverswall')
+            ->with([
+                'distinct_exams'=>ExamRecord::distinct()->get(['quiz_id']),
+                'exams'=>ExamRecord::where('pass_fail', 'pass')->get(),
+                'subjects'=>Subjects::all(),
+            ]);
+    }
+
+    public function examReport()
+    {
+        return view('reports.examReport')
+            ->with([
+                'distinct_exams'=>ExamRecord::distinct()->get(['quiz_id']),
+                'exams'=>ExamRecord::all(),
+                'subjects'=>Subjects::all(),
+            ]);
+    }
+
+    public function examQuestioncReport($subject_id)
+    {
+        return view('reports.examQuestionReport')
+            ->with([
+                'questions'=>Exam::where('subject_id', $subject_id)->get(),
+            ]);
     }
 
     public function learningresourcesReportSyllabus($subject_id){

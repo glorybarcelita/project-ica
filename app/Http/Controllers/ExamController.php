@@ -118,9 +118,9 @@ class ExamController extends Controller
           $status = 'fail';
         }
         
-        $countQuizRecord = ExamRecord::where('quiz_id', $request->subject_id)->count();
+        $countQuizRecord = ExamRecord::where('student_id', Auth::user()->id)->count();
         if($countQuizRecord >=1){
-          ExamRecord::where('quiz_id', $request->subject_id)->delete();
+          ExamRecord::where('student_id', Auth::user()->id)->delete();
         }
 
         $quiz_record = new ExamRecord;

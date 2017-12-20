@@ -22,41 +22,26 @@
       <div class="card-body">
             <table class="table table-bordered" id="myTable">
                 <thead>
-                    <th>Action</th>
-                    <th>Subject > Topic > Question </th>
+                    <th>Subject > Question </th>
                     <th>No. of answered correct</th>
                     <th>No. of answered wrong</th>
                     
                 </thead>
                 <tbody>
-                   @foreach($quizes as $quiz)
+                   @foreach($questions as $question)
                     <tr>
                         <td>
-                                <a href="{{ url('reports/quiz/stats/'.$quiz->id) }}" class="btn btn-outline-info">View Statistics</a>
+                            {{App\Models\Subjects::find($question->subject_id)->name}} > {{$question->question}}
                         </td>
-                        <td>
-                            @foreach($syllabuses as $syllabus)
-                                @if($syllabus->id == $quiz->syllabus_id )
-                                        {{App\Models\Subjects::find($syllabus->subject_id)->name}} > {{ $syllabus->name}} > {{ $quiz->question }}
-                                @endif
-                            @endforeach
-                        </td>
-                        <td>{{$quiz->correct_count}}</td>
-                        <td>{{$quiz->wrong_count}}</td>
+                        <td>{{$question->correct_count}}</td>
+                        <td>{{$question->wrong_count}}</td>
                     </tr>
                    @endforeach
                 </tbody>
             </table>
         </div>
-        <div class="card-footer">
-           A Total Registered Course of 
-        </div>
       </div>
     </div>
-
-
-    <h5>Count</h5>
-
 
 @endsection
 @push('styles')

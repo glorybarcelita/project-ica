@@ -24,8 +24,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/learningresources/{subject_id}', 'ReportsController@learningresourcesReportSyllabus');
     Route::get('/learningresources/{subject_id}/{syllabus_id}', 'ReportsController@learningresourcesReportTopic');
     Route::get('/quiz', 'ReportsController@quizReport');
-    Route::get('/quiz/stats', 'ReportsController@quizStatsReport');
+    Route::get('/quiz/stats/{quiz_id}', 'ReportsController@quizStatsReport');
+    Route::get('/exam', 'ReportsController@examReport');
+    Route::get('/exam/question/stats/{subject_id}', 'ReportsController@examQuestioncReport');
   });
+
+  Route::get('/achievers-wall', 'ReportsController@achieverWall');
 
   Route::prefix('quiz')->group(function () {
     Route::get('/{subject_id}/{syllabus_id}', 'QuizController@index');

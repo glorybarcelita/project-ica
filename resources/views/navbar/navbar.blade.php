@@ -58,7 +58,7 @@
                         <a class="nav-link" href="{{ route('learningresources.index') }}">Learning Resources <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Achiever's <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ url('achievers-wall') }}">Achiever's Wall<span class="sr-only">(current)</span></a>
                     </li>
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reports</a>
@@ -66,7 +66,7 @@
                     
                         
                         <a class="dropdown-item" href="{{ url('reports/quiz') }}">Quiz</a>
-                        <a class="dropdown-item" href="{{ url('reports/course') }}">Exam</a>
+                        <a class="dropdown-item" href="{{ url('reports/exam') }}">Exam</a>
                             
                         </div>
                       </li>

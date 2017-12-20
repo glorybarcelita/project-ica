@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container mt-4">
-    <legend>Quiz</legend>
+    <legend>Exam</legend>
     {{-- <div class="btn-group">
       <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Subjects
@@ -16,46 +16,34 @@
     </div>
         <div class="card card-info mt-4">
         <div class="card-header">
-            Quiz Question Statistics
+            Exam Statistics
              
         </div>
       <div class="card-body">
             <table class="table table-bordered" id="myTable">
                 <thead>
                     <th>Action</th>
-                    <th>Subject > Topic > Question </th>
-                    <th>No. of answered correct</th>
-                    <th>No. of answered wrong</th>
+                    <th>Subject</th>
+                    <th>Passed</th>
+                    <th>Failed</th>
                     
                 </thead>
                 <tbody>
-                   @foreach($quizes as $quiz)
+                   @foreach($distinct_exams as $distinct_exam)
                     <tr>
+                        <td><a href="{{ url('reports/exam/question/stats/'.$distinct_exam->quiz_id) }}" class="btn btn-outline-info">View Statistics</a></td>
                         <td>
-                                <a href="{{ url('reports/quiz/stats/'.$quiz->id) }}" class="btn btn-outline-info">View Statistics</a>
+                            {{ App\Models\Subjects::find($distinct_exam->quiz_id)->name }}
                         </td>
-                        <td>
-                            @foreach($syllabuses as $syllabus)
-                                @if($syllabus->id == $quiz->syllabus_id )
-                                        {{App\Models\Subjects::find($syllabus->subject_id)->name}} > {{ $syllabus->name}} > {{ $quiz->question }}
-                                @endif
-                            @endforeach
-                        </td>
-                        <td>{{$quiz->correct_count}}</td>
-                        <td>{{$quiz->wrong_count}}</td>
+                        <td>{{ count(App\ExamRecord::where('quiz_id', $distinct_exam->quiz_id)->where('pass_fail', 'pass')->get()) }}</td>
+                        <td>{{ count(App\ExamRecord::where('quiz_id', $distinct_exam->quiz_id)->where('pass_fail', 'fail')->get()) }}</td>
                     </tr>
                    @endforeach
                 </tbody>
             </table>
         </div>
-        <div class="card-footer">
-           A Total Registered Course of 
-        </div>
       </div>
     </div>
-
-
-    <h5>Count</h5>
 
 
 @endsection

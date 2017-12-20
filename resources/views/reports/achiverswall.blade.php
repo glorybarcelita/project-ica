@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container mt-4">
-    <legend>Quiz</legend>
+    <legend>Exam</legend>
     {{-- <div class="btn-group">
       <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Subjects
@@ -16,46 +16,34 @@
     </div>
         <div class="card card-info mt-4">
         <div class="card-header">
-            Quiz Question Statistics
+            Exam Statistics
              
         </div>
       <div class="card-body">
             <table class="table table-bordered" id="myTable">
                 <thead>
-                    <th>Action</th>
-                    <th>Subject > Topic > Question </th>
-                    <th>No. of answered correct</th>
-                    <th>No. of answered wrong</th>
+                    <th>Subject</th>
+                    <th>Student Name</th>
+                    <th>Student's course</th>
+                    <th>Lecturer Name</th>
                     
                 </thead>
                 <tbody>
-                   @foreach($quizes as $quiz)
+                   @foreach($exams as $exam)
                     <tr>
                         <td>
-                                <a href="{{ url('reports/quiz/stats/'.$quiz->id) }}" class="btn btn-outline-info">View Statistics</a>
+                            {{ App\Models\Subjects::find($exam->quiz_id)->name }}
                         </td>
-                        <td>
-                            @foreach($syllabuses as $syllabus)
-                                @if($syllabus->id == $quiz->syllabus_id )
-                                        {{App\Models\Subjects::find($syllabus->subject_id)->name}} > {{ $syllabus->name}} > {{ $quiz->question }}
-                                @endif
-                            @endforeach
-                        </td>
-                        <td>{{$quiz->correct_count}}</td>
-                        <td>{{$quiz->wrong_count}}</td>
+                        <td>{{ App\User::find($exam->student_id)->firstname }} {{ App\User::find($exam->student_id)->lastname }}</td>
+                        <td>{{ App\Models\Course::find(App\User::find($exam->student_id)->course )->name }}</td>
+                        <td>{{ App\User::find($exam->lecturer_id)->firstname}} {{ App\User::find($exam->lecturer_id)->lastname}}</td>
                     </tr>
                    @endforeach
                 </tbody>
             </table>
         </div>
-        <div class="card-footer">
-           A Total Registered Course of 
-        </div>
       </div>
     </div>
-
-
-    <h5>Count</h5>
 
 
 @endsection
