@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('users','UserController')->except(['delete','show1'])->middleware('auth');
+Route::resource('users','UserController')->except(['delete','show1']);
 Route::resource('courses','CourseController')->middleware('auth');
 Route::resource('subjects','SubjectController')->middleware('auth');
 Route::resource('syllabus','SyllabusController')->middleware('auth');

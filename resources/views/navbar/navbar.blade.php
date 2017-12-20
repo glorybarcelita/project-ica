@@ -87,6 +87,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('users.index') }}">Users <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('learningresources.index') }}">Learning Resources <span class="sr-only">(current)</span></a>
+                    </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reports</a>
@@ -104,6 +107,31 @@
                     </ul>
                                
             @endif
+
+            {{-- LOGIN NAV-LINK --}}
+
+           
+            @if (Route::has('login'))
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/home') }}">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                </ul>
+            @else
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                     <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">Login<span class="sr-only">(current)</span></a>
+                    </li>
+                     <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">Register<span class="sr-only">(current)</span></a>
+                    </li>
+                       
+                    @endauth
+                </ul>
+            @endif
+
+
             @auth
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

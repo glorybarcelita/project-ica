@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+
+<a href="{{ route('subjects.index') }}" class="col-sm-3 btn btn-md btn-outline-secondary float-right mr-3">Go Back</a>
+<br>
 <div class="container mt-4">
     <div class="card card-info">
         <div class="card-header">

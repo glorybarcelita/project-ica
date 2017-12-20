@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<a href="{{ route('users.index') }}" class="btn btn-md btn-outline-secondary">Go Back</a>
 <div class="container mt-4">
     <div class="card card-info">
         <div class="card-header">
