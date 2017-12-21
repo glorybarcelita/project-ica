@@ -12,10 +12,11 @@ class ComposerStaticInit2ecf5ee85fa6df29c4352ceadd63db07
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '46441ce319666e68ac0d753056faa9f4' => __DIR__ . '/..' . '/devmarketer/easynav/src/DevMarketer/EasyNav/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -73,6 +74,7 @@ class ComposerStaticInit2ecf5ee85fa6df29c4352ceadd63db07
         array (
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+            'LaravelNews\\Presets\\BootstrapFour\\' => 34,
         ),
         'I' => 
         array (
@@ -220,6 +222,10 @@ class ComposerStaticInit2ecf5ee85fa6df29c4352ceadd63db07
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'LaravelNews\\Presets\\BootstrapFour\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravelnews/laravel-twbs4/src',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -302,6 +308,10 @@ class ComposerStaticInit2ecf5ee85fa6df29c4352ceadd63db07
             array (
                 0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
             ),
+            'DevMarketer\\EasyNav' => 
+            array (
+                0 => __DIR__ . '/..' . '/devmarketer/easynav/src',
+            ),
         ),
     );
 
@@ -323,6 +333,7 @@ class ComposerStaticInit2ecf5ee85fa6df29c4352ceadd63db07
         'App\\Http\\Controllers\\LearningResourcesConroller' => __DIR__ . '/../..' . '/app/Http/Controllers/LearningResourcesConroller.php',
         'App\\Http\\Controllers\\PendingRequestController' => __DIR__ . '/../..' . '/app/Http/Controllers/PendingRequestController.php',
         'App\\Http\\Controllers\\QuizController' => __DIR__ . '/../..' . '/app/Http/Controllers/QuizController.php',
+        'App\\Http\\Controllers\\ReportsController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReportsController.php',
         'App\\Http\\Controllers\\SubjectController' => __DIR__ . '/../..' . '/app/Http/Controllers/SubjectController.php',
         'App\\Http\\Controllers\\SubjectTopicController' => __DIR__ . '/../..' . '/app/Http/Controllers/SubjectTopicController.php',
         'App\\Http\\Controllers\\SyllabusController' => __DIR__ . '/../..' . '/app/Http/Controllers/SyllabusController.php',
@@ -391,6 +402,9 @@ class ComposerStaticInit2ecf5ee85fa6df29c4352ceadd63db07
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
+        'DevMarketer\\EasyNav\\EasyNav' => __DIR__ . '/..' . '/devmarketer/easynav/src/DevMarketer/EasyNav/EasyNav.php',
+        'DevMarketer\\EasyNav\\EasyNavFacade' => __DIR__ . '/..' . '/devmarketer/easynav/src/DevMarketer/EasyNav/EasyNavFacade.php',
+        'DevMarketer\\EasyNav\\EasyNavServiceProvider' => __DIR__ . '/..' . '/devmarketer/easynav/src/DevMarketer/EasyNav/EasyNavServiceProvider.php',
         'DivisionByZeroError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php',
         'Doctrine\\Common\\Inflector\\Inflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php',
         'Doctrine\\Common\\Lexer\\AbstractLexer' => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer/AbstractLexer.php',
@@ -1296,6 +1310,7 @@ class ComposerStaticInit2ecf5ee85fa6df29c4352ceadd63db07
         'Illuminate\\Events\\CallQueuedListener' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/CallQueuedListener.php',
         'Illuminate\\Events\\Dispatcher' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/Dispatcher.php',
         'Illuminate\\Events\\EventServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/EventServiceProvider.php',
+        'Illuminate\\Filesystem\\Cache' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Filesystem/Cache.php',
         'Illuminate\\Filesystem\\Filesystem' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Filesystem/Filesystem.php',
         'Illuminate\\Filesystem\\FilesystemAdapter' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Filesystem/FilesystemAdapter.php',
         'Illuminate\\Filesystem\\FilesystemManager' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Filesystem/FilesystemManager.php',
@@ -1674,6 +1689,7 @@ class ComposerStaticInit2ecf5ee85fa6df29c4352ceadd63db07
         'Illuminate\\Support\\NamespacedItemResolver' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/NamespacedItemResolver.php',
         'Illuminate\\Support\\Optional' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Optional.php',
         'Illuminate\\Support\\Pluralizer' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Pluralizer.php',
+        'Illuminate\\Support\\ProcessUtils' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/ProcessUtils.php',
         'Illuminate\\Support\\ServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/ServiceProvider.php',
         'Illuminate\\Support\\Str' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Str.php',
         'Illuminate\\Support\\Testing\\Fakes\\BusFake' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Testing/Fakes/BusFake.php',
@@ -1748,6 +1764,8 @@ class ComposerStaticInit2ecf5ee85fa6df29c4352ceadd63db07
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'LaravelNews\\Presets\\BootstrapFour\\BootstrapPreset' => __DIR__ . '/..' . '/laravelnews/laravel-twbs4/src/BootstrapPreset.php',
+        'LaravelNews\\Presets\\BootstrapFour\\BootstrapPresetServiceProvider' => __DIR__ . '/..' . '/laravelnews/laravel-twbs4/src/BootstrapPresetServiceProvider.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
